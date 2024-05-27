@@ -45,7 +45,7 @@ async def connect(ip, user, password):
 async def start():
     tasks = []
 
-    async with afile('users.txt', errors="ignore",
+    async with afile('user.txt', errors="ignore",
                      encoding="utf-8") as users:
         async for user in users:
             async with afile('passwords.txt', errors="ignore",
