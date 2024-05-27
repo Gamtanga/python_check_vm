@@ -49,5 +49,10 @@ def main():
     elapsed_time = end_time - start_time
     print(f"Quét xong {num_ips} IP trong {elapsed_time:.2f} giây.")
 
+    # Lưu các địa chỉ IP vào tệp ip.txt
+    with open("ip.txt", "w") as file:
+        for ip in all_results:
+            file.write(ip + "\n")  # Thêm ký tự xuống dòng sau mỗi địa chỉ IP
+
 if __name__ == "__main__":
     main()
